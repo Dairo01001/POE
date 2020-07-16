@@ -141,7 +141,7 @@ public class JSliderLayout2 extends JFrame implements ChangeListener, ItemListen
     private final Font font = new Font("Courier New", Font.BOLD, 20);
 
     public static void main(String[] args) {
-        var ventana = new JSliderLayout2();
+        JSliderLayout2 ventana = new JSliderLayout2();
         ventana.setVisible(true);
     }
 

@@ -45,7 +45,7 @@ public class ImagenesLayout extends JFrame {
             this.imagen.setIcon(this.img.getIMG().get(e.getActionCommand()));
         };
         for (String nombre : this.img.getNOMBRES()) {
-            var jRb = new JRadioButton(nombre);
+            JRadioButton jRb = new JRadioButton(nombre);
             jRb.setFont(this.font);
             bTg.add(jRb);
             jRb.addActionListener(actionListener);
@@ -87,7 +87,7 @@ public class ImagenesLayout extends JFrame {
     private ActionListener actionListener;
 
     public static void main(String[] args) {
-        var ventana = new ImagenesLayout();
+        ImagenesLayout ventana = new ImagenesLayout();
         ventana.setVisible(true);
     }
 }

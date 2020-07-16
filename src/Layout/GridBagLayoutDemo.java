@@ -25,9 +25,9 @@ public class GridBagLayoutDemo extends JFrame {
     }
 
     private void initComponets() {
-        var grid = new GridBagLayout();
+        GridBagLayout grid = new GridBagLayout();
         JPanel jP = new JPanel(grid);
-        var form = new GridBagConstraints();
+        GridBagConstraints form = new GridBagConstraints();
 
         form.gridx = 0;
         form.gridy = 0;
@@ -79,7 +79,7 @@ public class GridBagLayoutDemo extends JFrame {
     }
 
     private JButton initJButton(String nombre) {
-        var jB = new JButton(nombre);
+        JButton jB = new JButton(nombre);
         jB.setFont(this.font);
         return jB;
     }
@@ -87,7 +87,7 @@ public class GridBagLayoutDemo extends JFrame {
     private final Font font = new Font("Courier New", Font.BOLD, 20);
 
     public static void main(String[] args) {
-        var ventana = new GridBagLayoutDemo();
+        GridBagLayoutDemo ventana = new GridBagLayoutDemo();
         ventana.setVisible(true);
     }
 }

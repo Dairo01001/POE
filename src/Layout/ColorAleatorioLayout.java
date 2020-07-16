@@ -100,7 +100,7 @@ public class ColorAleatorioLayout extends JFrame implements ActionListener {
     private final Font font = new Font("Courier New", Font.BOLD, 20);
     
     public static void main(String[] args) {
-        var ventana = new ColorAleatorioLayout();
+        ColorAleatorioLayout ventana = new ColorAleatorioLayout();
         ventana.setVisible(true);
     }
 }

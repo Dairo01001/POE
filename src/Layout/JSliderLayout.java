@@ -70,7 +70,7 @@ public class JSliderLayout extends JFrame implements ChangeListener {
     private final Font font = new Font("Courier New", Font.BOLD, 20);
 
     public static void main(String[] args) {
-        var ventana = new JSliderLayout();
+        JSliderLayout ventana = new JSliderLayout();
         ventana.setVisible(true);
     }
 }
