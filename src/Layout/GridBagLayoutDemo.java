@@ -1,12 +1,11 @@
 package Layout;
 
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 /**
  * @author Dairo García
@@ -15,76 +14,60 @@ public class GridBagLayoutDemo extends JFrame {
 
     public GridBagLayoutDemo() {
         this.initJFrame();
-        this.initComponets();
+        this.initComponentes();
     }
 
     private void initJFrame() {
-        this.setTitle("GridBagLayout");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 
-    private void initComponets() {
-        GridBagLayout grid = new GridBagLayout();
-        JPanel jP = new JPanel(grid);
-        GridBagConstraints form = new GridBagConstraints();
+    private void initComponentes() {
+        this.panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        form.gridx = 0;
-        form.gridy = 0;
-        form.gridwidth = 6;
-        form.gridheight = 2;
-        form.weightx = 1.0;
-        form.weighty = 1.0;
-        form.fill = GridBagConstraints.BOTH;
-        jP.add(new JTextArea(), form);
+        gbc.weightx = 0.5;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        this.panel.add(new JButton("Dairo"), gbc);
 
-        form.gridx = 1;
-        form.gridy = 2;
-        form.gridwidth = 1;
-        form.gridheight = 1;
-        form.weightx = 1.0;
-        form.weighty = 1.0;
-        form.fill = GridBagConstraints.BOTH;
-        jP.add(this.initJButton("Dairo"), form);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 0.5;
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        this.panel.add(new JButton("Garcia"), gbc);
 
-        form.gridx = 2;
-        form.gridy = 2;
-        form.gridwidth = 1;
-        form.gridheight = 1;
-        form.weightx = 1.0;
-        form.weighty = 1.0;
-        form.fill = GridBagConstraints.BOTH;
-        jP.add(this.initJButton("Dairo"), form);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 0.5;
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        this.panel.add(new JButton("Naranjo"), gbc);
 
-        form.gridx = 1;
-        form.gridy = 3;
-        form.gridwidth = 2;
-        form.gridheight = 1;
-        form.weightx = 1.0;
-        form.weighty = 1.0;
-        form.fill = GridBagConstraints.BOTH;
-        jP.add(this.initJButton("Dairo"), form);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 40;
+        gbc.weightx = 0;
+        gbc.gridwidth = 3;
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        this.panel.add(new JButton("Dairo Garcia Naranjo"), gbc);
 
-        form.gridx = 2;
-        form.gridy = 2;
-        form.gridwidth = 2;
-        form.gridheight = 1;
-        form.weightx = 1.0;
-        form.weighty = 1.0;
-        form.fill = GridBagConstraints.BOTH;
-        jP.add(this.initJButton("Dairo"), form);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 0;       //reset to default
+        gbc.weighty = 1.0;   //request any extra vertical space
+        gbc.anchor = GridBagConstraints.PAGE_END; //bottom of space
+        gbc.insets = new Insets(10, 0, 0, 0);  //top padding
+        gbc.gridx = 1;       //aligned with button 2
+        gbc.gridwidth = 2;   //2 columns wide
+        gbc.gridy = 2;       //third row
+        this.panel.add(new JButton("Que pasa?"), gbc);
 
-        this.add(jP);
+        this.add(this.panel);
+
         this.pack();
     }
 
-    private JButton initJButton(String nombre) {
-        JButton jB = new JButton(nombre);
-        jB.setFont(this.font);
-        return jB;
-    }
-
-    private final Font font = new Font("Courier New", Font.BOLD, 20);
+    private JPanel panel;
 
     public static void main(String[] args) {
         GridBagLayoutDemo ventana = new GridBagLayoutDemo();
