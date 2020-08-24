@@ -1,13 +1,16 @@
 package Layout;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 /**
  * @author Dairo García Naranjo
@@ -30,16 +33,21 @@ public class CardL extends JFrame {
         JTabbedPane tP = new JTabbedPane();
         tP.setFont(this.FONT);
         
+        Border linea = BorderFactory.createLineBorder(Color.BLACK);
+        
         this.carta = new JPanel();
+        this.carta.setBorder(linea);
         this.carta.add(this.jButton("UNO"));
         this.carta.add(this.jButton("DOS"));
         this.carta.add(this.jButton("TRES"));
 
         this.carta1 = new JPanel();
+        this.carta1.setBorder(linea);
         this.carta1.add(this.jTextField("......"));
         this.carta1.add(this.jTextField("......"));
 
         this.carta2 = new JPanel();
+        this.carta2.setBorder(linea);
         this.carta2.add(this.jSlider());
 
         tP.addTab("Button", this.carta);
