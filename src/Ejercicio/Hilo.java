@@ -10,7 +10,7 @@ import javax.swing.JButton;
 public class Hilo extends Thread {
 
     private final JButton cont;
-    private final int velocidad;
+    private  int velocidad;
     private final boolean retroceso;
 
     public Hilo(JButton cont, int velocidad, boolean retroceso) {
@@ -27,6 +27,11 @@ public class Hilo extends Thread {
         }
     }
 
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+    
+    
     @Override
     public void run() {
         try {
